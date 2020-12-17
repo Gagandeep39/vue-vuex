@@ -272,6 +272,7 @@ const store = createStore({
 });
 ```
 
-- Name will not cause any problem in code working
+- `anyModule` Name will not cause any problem in code working
 - Modules proide readibility
-- In memory, all states are together
+- Everything like state, mutations, context are local. They will only be able to access local data
+- Local getters have access to `rootState` and `rootGetters` as parameter to manipulate flobal state
