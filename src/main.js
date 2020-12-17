@@ -26,6 +26,14 @@ const store = createStore({
       return state.counter;
     },
   },
+  actions: {
+    increment(context) {
+      // contxt - Provides access to do in store, mutation
+      setTimeout(() => {
+        context.commit('increment');
+      }, 1000);
+    },
+  },
 });
 
 createApp(App)
