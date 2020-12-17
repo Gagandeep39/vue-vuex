@@ -1,13 +1,15 @@
 <template>
-  <h3>{{ counter }}</h3>
+  <h3>{{ finalValue }}</h3>
   <p>We do more...</p>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 export default {
   computed: {
-    counter() {
-      return this.$store.getters.finalValue;
-    },
+    ...mapGetters(['finalValue']),
+    // counter() {
+    //   return this.$store.getters.finalValue;
+    // },
   },
 };
 </script>

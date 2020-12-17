@@ -11,6 +11,7 @@
   - [Getters](#getters)
   - [Actions](#actions)
   - [Action Context](#action-context)
+  - [Map Getters](#map-getters)
 
 ## Deployment
 
@@ -209,3 +210,19 @@ actions: {
   increment(context) {}
 }
 ```
+
+## Map Getters
+
+- Provides us with also getters in component
+- Reduces code if we need multiple getters
+
+```js
+import { mapGetters } from 'vuex';
+export default {
+  computed: {
+    ...mapGetters(['finalValue']),
+  },
+};
+```
+
+- FinalValue can aer be used as `<h3>{{ finalValue }}</h3>`
