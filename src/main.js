@@ -17,6 +17,15 @@ const store = createStore({
       state.counter = state.counter + payload.value;
     },
   },
+  getters: {
+    finalValue(state, getter) {
+      // getter - Provides value of other getter
+      // state - Values of state
+      console.log(getter);
+      console.log(state);
+      return state.counter;
+    },
+  },
 });
 
 createApp(App)
