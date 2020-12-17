@@ -9,6 +9,7 @@
   - [Mutation](#mutation)
   - [Mutation with Params](#mutation-with-params)
   - [Getters](#getters)
+  - [Actions](#actions)
 
 ## Deployment
 
@@ -27,6 +28,11 @@
   - Unpredicatable behavior
   - Difficult to know when state has changed
   - Difficut to respond to state changes
+- Basic Flow
+  1. Component execute actions
+  2. Actions call mutaiton
+  3. Mutations used to manipulate store
+  4. Getter used to fetch store data
 
 ## Instalaltion
 
@@ -76,6 +82,7 @@ methods: {
 - Having multiple logic at different places is difficult to manage
 - Large code is more prone to error
 - We must **NEVER** update state drectly from component (**Always** use mutation)
+- Mutation are **always** synchronous, (Actions are used for asynchronous code)
 - To fix this we use mutation
 
 ```js
@@ -149,4 +156,33 @@ const store = createStore({
 ```js
 // Accessing a getter
 this.$store.getters.finalValue;
+```
+
+## Actions
+
+- Called by component
+- Used to run async code
+- Calls Mutations
+
+```js
+const store = createStore({
+  // Creating action
+  actions: {
+    increment(context) {
+      // contxt - Provides access to do in store, mutation
+      setTimeout(() => {
+        context.commit('increment');
+      }, 1000);
+    },
+  },
+});
+```
+
+```js
+// Access actions
+// this.$store.dispatch('increment');
+// OR
+this.$store.dispatch({
+  type: 'increment',
+});
 ```
