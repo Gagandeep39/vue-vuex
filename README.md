@@ -8,6 +8,7 @@
     - [Store](#store)
   - [Mutation](#mutation)
   - [Mutation with Params](#mutation-with-params)
+  - [Getters](#getters)
 
 ## Deployment
 
@@ -74,6 +75,7 @@ methods: {
 - Centralized bussiness logic for state manipuation
 - Having multiple logic at different places is difficult to manage
 - Large code is more prone to error
+- We must **NEVER** update state drectly from component (**Always** use mutation)
 - To fix this we use mutation
 
 ```js
@@ -116,4 +118,35 @@ this.$store.commit({
   type: 'incrementBy',
   value: 10,
 });
+```
+
+## Getters
+
+- Allows us to fetch store data
+- Used to specify formatting logic
+
+```js
+// Implementation
+const store = createStore({
+  state() {
+    return {
+      // ..
+    };
+  },
+  mutations: {
+    // ..
+  },
+  getters: {
+    finalValue(state, getter) {
+      // getter - Provides value of other getter
+      // state - Values of state
+      return state.counter;
+    },
+  },
+});
+```
+
+```js
+// Accessing a getter
+this.$store.getters.finalValue;
 ```
