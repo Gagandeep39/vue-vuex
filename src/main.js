@@ -13,6 +13,9 @@ const store = createStore({
     increment(state) {
       state.counter = state.counter + 2;
     },
+    incrementBy(state, payload) {
+      state.counter = state.counter + payload.value;
+    },
   },
 });
 
