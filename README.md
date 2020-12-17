@@ -6,6 +6,7 @@
   - [Instalaltion](#instalaltion)
   - [Modules of Vuex](#modules-of-vuex)
     - [Store](#store)
+  - [Mutation](#mutation)
 
 ## Deployment
 
@@ -35,6 +36,7 @@
 
 - Centralized location where all data is stored
 - Creating a store
+- **NOTE** Below snippet is not a correct implementation
 
 ```js
 import { createApp } from 'vue';
@@ -64,4 +66,29 @@ methods: {
       this.$store.state.counter++;
     },
   }
+```
+
+## Mutation
+
+- Centralized bussiness logic for state manipuation
+- Having multiple logic at different places is difficult to manage
+- Large code is more prone to error
+- To fix this we use mutation
+
+```js
+// Creating mutation
+// ...
+const store = createStore({
+  mutations: {
+    increment(state) {
+      state.counter = state.counter + 2;
+    },
+  },
+});
+// ...
+```
+
+```js
+// accessing mutation
+this.$store.commit('increment');
 ```
