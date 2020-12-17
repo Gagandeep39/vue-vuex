@@ -1,24 +1,14 @@
-# vue-vuex
+# Vue Vuex - State Management
 
-## Project setup
-```
-yarn install
-```
+- [Vue Vuex - State Management](#vue-vuex---state-management)
+  - [Deployment](#deployment)
+  - [Description](#description)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Deployment
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- Checkout deployment at <https://gagandeep39.github.io/vue-vuex/>
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Description
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Global Statement tool
+- Similar to Redux and Ngrx
