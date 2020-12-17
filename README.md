@@ -14,6 +14,7 @@
   - [Map Getters](#map-getters)
   - [Map Actions](#map-actions)
   - [Modulariztion](#modulariztion)
+  - [Namespaces](#namespaces)
 
 ## Deployment
 
@@ -276,3 +277,42 @@ const store = createStore({
 - Modules proide readibility
 - Everything like state, mutations, context are local. They will only be able to access local data
 - Local getters have access to `rootState` and `rootGetters` as parameter to manipulate flobal state
+
+## Namespaces
+
+- Multiple local modules when accessed globally can have name clashes
+- To fix this me provide a config option `namespaced: true` in local module
+- It will break the code, as we will require to use the module name to access the store
+
+```js
+const anyModule = {
+  namespaced: true,
+  getters: {},
+  state() {
+    return {};
+  },
+  mutations: {},
+  actions: {},
+};
+const store = createStore({
+  modules: {
+    anyName: anyModule,
+  },
+});
+```
+
+```js
+// Acces sthese modules
+this.$store.state.numbers.counter;
+// OR
+this.$state.dispatch('anyName/increment');
+// OR
+this.$store.dispatch({
+        type: 'anyName/incrementBy',
+        value: 10,
+      });
+// OR
+..mapActions('anyName', ['increment', 'incrementBy']),
+// OR
+...mapActions('anyName', ['login', 'logout']),
+```

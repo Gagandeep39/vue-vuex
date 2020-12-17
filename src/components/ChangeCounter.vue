@@ -13,7 +13,7 @@ export default {
     //     type: 'increment',
     //   });
     // },
-    ...mapActions(['increment', 'incrementBy']),
+    ...mapActions('numbers', ['increment', 'incrementBy']),
   },
 };
 </script>

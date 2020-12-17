@@ -31,7 +31,7 @@ export default {
       // this.$store.commit('incrementBy', { value: 10 });
       // OR
       this.$store.dispatch({
-        type: 'incrementBy',
+        type: 'numbers/incrementBy',
         value: 10,
       });
     },
