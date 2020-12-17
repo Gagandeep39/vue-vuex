@@ -24,7 +24,7 @@ export default {
     increment() {
       // this.$store.commit('incrementBy', { value: 10 });
       // OR
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'incrementBy',
         value: 10,
       });
