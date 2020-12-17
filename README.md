@@ -10,6 +10,7 @@
   - [Mutation with Params](#mutation-with-params)
   - [Getters](#getters)
   - [Actions](#actions)
+  - [Action Context](#action-context)
 
 ## Deployment
 
@@ -193,4 +194,18 @@ const store = createStore({
 this.$store.dispatch({
   type: 'increment',
 });
+```
+
+## Action Context
+
+- Provides to everything available
+  - getters
+  - actions
+  - state
+  - commit (To call other action)
+
+```js
+actions: {
+  increment(context) {}
+}
 ```
