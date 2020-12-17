@@ -19,7 +19,12 @@ export default {
   },
   methods: {
     increment() {
-      this.$store.commit('incrementBy', { value: 10 });
+      // this.$store.commit('incrementBy', { value: 10 });
+      // OR
+      this.$store.commit({
+        type: 'incrementBy',
+        value: 10,
+      });
     },
   },
 };
