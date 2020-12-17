@@ -15,6 +15,7 @@
   - [Map Actions](#map-actions)
   - [Modulariztion](#modulariztion)
   - [Namespaces](#namespaces)
+  - [Folder Structuring](#folder-structuring)
 
 ## Deployment
 
@@ -316,3 +317,12 @@ this.$store.dispatch({
 // OR
 ...mapActions('anyName', ['login', 'logout']),
 ```
+
+## Folder Structuring
+
+- Create a folder store
+  1.  index.js
+  2.  mutations.js
+  3.  getters.js
+  4.  actions.js
+- To create local stores, create a subfolder inside store with above files
