@@ -12,6 +12,7 @@
   - [Actions](#actions)
   - [Action Context](#action-context)
   - [Map Getters](#map-getters)
+  - [Map Actions](#map-actions)
 
 ## Deployment
 
@@ -226,3 +227,24 @@ export default {
 ```
 
 - FinalValue can aer be used as `<h3>{{ finalValue }}</h3>`
+
+## Map Actions
+
+- Similar to mapGetter but for actions
+- Improves code (Reduces code)
+
+```js
+// Providing actions to component
+import { mapActions } from 'vuex';
+export default {
+  methods: {
+    ...mapActions(['increment', 'incrementBy']),
+  },
+};
+```
+
+```html
+<!-- Usung the methods -->
+<button @click="increment()">Add 1</button>
+<button @click="incrementBy({ value: 5 })">Add 5</button>
+```
