@@ -13,6 +13,7 @@
   - [Action Context](#action-context)
   - [Map Getters](#map-getters)
   - [Map Actions](#map-actions)
+  - [Modulariztion](#modulariztion)
 
 ## Deployment
 
@@ -248,3 +249,29 @@ export default {
 <button @click="increment()">Add 1</button>
 <button @click="incrementBy({ value: 5 })">Add 5</button>
 ```
+
+## Modulariztion
+
+- Dividing store into modules
+- Dividing store data and operations
+
+```js
+const anyModule = {
+  getters: {},
+  state() {
+    return {};
+  },
+  mutations: {},
+  actions: {},
+};
+
+const store = createStore({
+  modules: {
+    anyName: anyModule,
+  },
+});
+```
+
+- Name will not cause any problem in code working
+- Modules proide readibility
+- In memory, all states are together
