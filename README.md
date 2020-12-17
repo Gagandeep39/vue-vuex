@@ -7,6 +7,7 @@
   - [Modules of Vuex](#modules-of-vuex)
     - [Store](#store)
   - [Mutation](#mutation)
+  - [Mutation with Params](#mutation-with-params)
 
 ## Deployment
 
@@ -91,4 +92,23 @@ const store = createStore({
 ```js
 // accessing mutation
 this.$store.commit('increment');
+```
+
+## Mutation with Params
+
+- To perform certain operation, we require parameter
+- We can pass parameter to muation methods as payload
+
+```js
+// Mutation methd
+mutations: {
+    incrementBy(state, payload) {
+      state.counter = state.counter + payload.value;
+    },
+  },
+```
+
+```js
+// Calling the method
+this.$store.commit('incrementBy', { value: 10 });
 ```
